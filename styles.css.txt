@@ -1,0 +1,30 @@
+let cart = [];
+let total = 0;
+
+function addToCart(itemName, itemPrice) {
+    cart.push({name: itemName, price: itemPrice});
+    total += itemPrice;
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price} руб.`;
+        cartItems.appendChild(li);
+    });
+    document.getElementById('total').textContent = `Итого: ${total} руб.`;
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Корзина пуста!");
+    } else {
+        alert("Заказ оформлен. Спасибо за покупку!");
+        cart = [];
+        total = 0;
+        updateCart();
+    }
+}

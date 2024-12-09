@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка роллов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Главная страница -->
+    <header>
+        <h1>Доставка роллов</h1>
+        <nav>
+            <a href="#menu">Меню</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Вкусные роллы с доставкой на дом!</h2>
+        <button onclick="window.location.href='#menu'">Посмотреть меню</button>
+    </section>
+
+    <!-- Меню -->
+    <section id="menu">
+        <h2>Наше меню</h2>
+        <div class="product">
+            <img src="roll1.jpg" alt="Ролл 1">
+            <h3>Ролл Калифорния</h3>
+            <p>500 руб.</p>
+            <button onclick="addToCart('Ролл Калифорния', 500)">Добавить в корзину</button>
+        </div>
+        <div class="product">
+            <img src="roll2.jpg" alt="Ролл 2">
+            <h3>Ролл Филадельфия</h3>
+            <p>550 руб.</p>
+            <button onclick="addToCart('Ролл Филадельфия', 550)">Добавить в корзину</button>
+        </div>
+    </section>
+
+    <!-- Корзина -->
+    <section id="cart">
+        <h2>Корзина</h2>
+        <ul id="cartItems"></ul>
+        <p id="total">Итого: 0 руб.</p>
+        <button onclick="checkout()">Оформить заказ</button>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Телефон: 8 (800) 123-45-67</p>
+        <p>Email: delivery@rolls.com</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
